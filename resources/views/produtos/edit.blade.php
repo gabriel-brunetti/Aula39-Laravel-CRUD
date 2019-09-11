@@ -23,7 +23,7 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label for="nome">Preço</label>
+		<label for="preco">Preço</label>
 		<input type="number" step="0.01" class="form-control" name="preco" id="preco" placeholder="Preço" value="{{$produto->preco}}">
 	</div>
 	<div class="form-group">

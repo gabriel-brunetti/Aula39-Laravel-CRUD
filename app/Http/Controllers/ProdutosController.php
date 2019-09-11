@@ -29,7 +29,8 @@ class ProdutosController extends Controller
 
         // Retornar a view do produto selecionado
         return view(
-            'produtos.show',compact('produto')
+            'produtos.show',
+            compact('produto')
         );
     }
 
