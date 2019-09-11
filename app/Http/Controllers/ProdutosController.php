@@ -50,6 +50,21 @@ class ProdutosController extends Controller
     }
 
     public function update($id){
+
+        // Validar o request
+        // request -> pega o valor do campo do formulario
+        request()->validate(
+            [
+                // $campo => $regra
+                'nome' => 'required',
+                'categoria' => 'required',
+                // gte = greater than or equal
+                // gt = greather than
+                // lt = less than
+                'preco' => 'required|gte:0|lt:999.99',
+                'quantidade' => 'required|gt:0|lt:1000',
+            ]
+            );
         
         // Carregando o produto da base de dados
         $produto = Produto::find($id);
