@@ -96,4 +96,46 @@ class ProdutosController extends Controller
         // Redirecionar para a lista de produtos
         return redirect('/produtos');
     }
+
+    public function create(){
+        // importando categorias
+        $categorias = Categoria::all();
+
+        // Retornando a view
+        return view(
+            'produtos.create',compact('categorias')
+        );
+    }
+
+    public function store(){
+        // Validar request
+        // request -> pega o valor do campo do formulario
+        request()->validate(
+            [
+                // $campo => $regraDeValidacao
+                'nome' => 'required',
+                'categoria' => 'required',
+                'preco' => 'required|gte:0|lt:999.99',
+                'quantidade' => 'required|gt:0|lt:1000',
+            ]
+        );
+
+        // Novo Produtos
+        $p = new Produto;
+
+        // Atribuindo valores ao Produto
+        $p->nome = request('nome');
+        $p->preco = request('preco');
+        $p->quantidade = request('quantidade');
+        // unico que fica diferente
+        $p->id_categoria = request('categoria');
+
+        // Salvar o produto
+        $p->save();
+
+        return view(
+            'produtos.index'
+        );
+
+    }
 }
