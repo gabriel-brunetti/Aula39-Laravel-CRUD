@@ -22,6 +22,7 @@ class ProdutosController extends Controller
         );
     }
 
+    // MOSTRAR AS INFORMAÇÔES ESPECIFICAS DE UM PRODUTO
     public function show($id){
         // Carrega o produto da base de dados
         // comando FIND(encontrar) igual o SQL
@@ -34,6 +35,7 @@ class ProdutosController extends Controller
         );
     }
 
+    // CARREGAR FORMULÁRIO EDIÇÃO PRODUTOS
     public function edit($id){
         // Carrega o produto da base de dados
         // comando FIND(encontrar) igual o SQL
@@ -49,6 +51,7 @@ class ProdutosController extends Controller
         );
     }
 
+    // ALTERAR UM PRODUTO - MANDAR DADOS PARA A DB
     public function update($id){
 
         // Validar o request
@@ -83,6 +86,7 @@ class ProdutosController extends Controller
         return redirect('/produtos');
     }   
 
+    // DELETAR UM PRODUTO
     public function destroy($id){
         // Carregando o produto da base de dados
         // $produto = Produto::find($id);
@@ -94,9 +98,10 @@ class ProdutosController extends Controller
         Produto::where('id',$id)->delete();
 
         // Redirecionar para a lista de produtos
-        return redirect('/produtos');
+        return back();
     }
 
+    // MOSTRAR FORMULÁRIO CRIAÇÃO DE PRODUTO
     public function create(){
         // importando categorias
         $categorias = Categoria::all();
@@ -107,6 +112,7 @@ class ProdutosController extends Controller
         );
     }
 
+    // CRIAR UM PRODUTO - MANDAR PARA O DB
     public function store(){
         // Validar request
         // request -> pega o valor do campo do formulario
@@ -133,8 +139,8 @@ class ProdutosController extends Controller
         // Salvar o produto
         $p->save();
 
-        return view(
-            'produtos.index'
+        return redirect(
+            '/produtos'
         );
 
     }
