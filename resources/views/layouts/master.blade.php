@@ -12,11 +12,11 @@
     <title>Amado - Furniture Ecommerce Template | Home</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{url('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="('/img/core-img/favicon.ico')">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="('/css/core-style.css')">
-    <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="('/css/style.css')">
 
 </head>
 
