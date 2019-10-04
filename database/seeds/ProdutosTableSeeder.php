@@ -16,7 +16,7 @@ class ProdutosTableSeeder extends Seeder
             [
             'nome' => 'Programo todo dia',
             'id_categoria' => 4,
-            'preco' => 21,2,
+            'preco' => 21.2,
             'quantidade' => 99
             ]
         );
