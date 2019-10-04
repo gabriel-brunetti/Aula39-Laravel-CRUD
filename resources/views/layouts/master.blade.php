@@ -15,8 +15,8 @@
     <link rel="icon" href="{{url('img/core-img/favicon.ico')}}">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="{{url('./css/core-style.css')}}">
-    <link rel="stylesheet" href="{{url('./css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/core-style.css')}}">
+    <link rel="stylesheet" href="{{url('css/style.css')}}">
 
 </head>
 
